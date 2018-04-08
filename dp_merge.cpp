@@ -68,7 +68,8 @@ int main(void) {
 			};
 			move = (sR < MAX) ? sR : 0;
 			//if (cases != 0 && GetTickCount() - p_time > ave * 2) { cout << "**Timeout****Timeout****Timeout****Timeout****Timeout**\n"; time_out = true; break; }
-		}
+		}{
+		p_time = GetTickCount() - p_time;
 		//end
 		sorted = true;
 		for (int i = 1; i < MAX; i++) {
@@ -78,8 +79,7 @@ int main(void) {
 			}
 		}
 		cout << "( ** sorted ** )  ";
-		if (time_out == false) {
-			p_time = GetTickCount() - p_time;
+		if (time_out == false) 
 			cases += 1;
 			sum += p_time;
 			ave = (double)sum / (double)cases;

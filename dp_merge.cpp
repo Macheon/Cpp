@@ -66,7 +66,7 @@ int main(void) {
 				arr[i] = m[j];
 				inx[i] = re;
 			};
-			move = (sR < MAX) ? sR : 0;
+			move = (sR < MAX && inx[sR] + 1 < MAX)?sR:0;
 			//if (cases != 0 && GetTickCount() - p_time > ave * 2) { cout << "**Timeout****Timeout****Timeout****Timeout****Timeout**\n"; time_out = true; break; }
 		}{
 		p_time = GetTickCount() - p_time;

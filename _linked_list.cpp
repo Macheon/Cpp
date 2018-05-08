@@ -67,12 +67,13 @@ bool list::Insert(int x) {
 	return true;
 }
 
-bool list::Delete(int x, node **l) {
+bool list::Delete(int x) {
 	node *p;
-	if (Search(x, l, &p)) {
-		if (p != NULL)p->next = (*l)->next;
-		else head = (*l)->next;
-		delete *l;
+	node *l;
+	if (Search(x, &l, &p)) {
+		if (p != NULL)p->next = l->next;
+		else head = l->next;
+		delete l;
 	}
 	else {
 		return false;
@@ -103,7 +104,7 @@ int main(void) {
 				else cout << "Value " << val << " is successfully inserted\n";
 				break;
 			case 2:
-				if(!lst->Delete(val, &l)) cout << "Value " << val << " is not in list\n";
+				if(!lst->Delete(val)) cout << "Value " << val << " is not in list\n";
 				else cout << "Value " << val << " is successfully deleted\n";
 				break;
 			}

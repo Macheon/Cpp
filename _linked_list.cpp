@@ -14,9 +14,9 @@ private:
 public:
 	list();
 	~list();
-	bool Search(int value, node **l, node **p);
-	bool Insert(int x);
-	bool Delete(int x, node **l);
+	bool Search(int, node**, node**);
+	bool Insert(int);
+	bool Delete(int);
 	void show();
 };
 
